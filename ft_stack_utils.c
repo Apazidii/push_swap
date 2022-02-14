@@ -39,17 +39,3 @@ t_stack	*ft_add_new_elem(t_stack **stack, int value, int *stack_size)
 	*stack = new;
 	return (new);
 }
-
-void	ft_stack_print(t_stack *stack, int stack_size)
-{
-	if (stack_size != 0)
-	{
-		printf("--------------------\n");
-		printf("Stack value: %d\n", stack->value);
-		printf("Stack->next value: %d\n", stack->next->value);
-		printf("Stack->prev value: %d\n", stack->prev->value);
-		printf("Stack->pos value: %d\n", stack->position);
-		printf("--------------------\n");
-		ft_stack_print(stack->next, stack_size -1);
-	}
-}

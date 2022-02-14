@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft.h"
+# include "libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
 
@@ -25,17 +25,24 @@ typedef struct s_stack
 	int 			position;
 }			t_stack;
 
-struct	s_allstacks
+typedef struct	s_base
 {
 	struct s_stack	*a;
 	struct s_stack	*b;
 	int				size_a;
 	int				size_b;
-}		t_allstacks;
+}		t_base;
 
 t_stack	*ft_create_new_stack(int value);
 t_stack	*ft_add_new_elem(t_stack **stack, int value, int *stack_size);
-void	ft_stack_print(t_stack *stack, int stack_size);
 void	ft_set_position(t_stack *stack, int stack_size, int *arg);
+
+//prints
+void	ft_base_print(t_base *base);
+void	ft_stack_print(t_stack *stack, int stack_size, char c);
+
+//moves
+void	ft_sa(t_base *base);
+void	ft_ra(t_base *base);
 
 #endif

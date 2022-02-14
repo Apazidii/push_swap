@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	*argv_to_arr(int size, char *argv[])
+int	*ft_argv_to_arr(int size, char *argv[])
 {
 	int	*res;
 
@@ -25,15 +25,21 @@ int	*argv_to_arr(int size, char *argv[])
 int	main(int argc, char *argv[])
 {
 	t_stack		*stack;
+	t_base		*base;
 	int			*arg;
 	int			stack_size;
 
-	arg = argv_to_arr(--argc, argv);
+	arg = ft_argv_to_arr(--argc, argv);
 	//добавить проверку на валидность
 	stack = ft_create_new_stack(arg[--argc]);
 	stack_size = 1;
 	while (argc--)
 		ft_add_new_elem(&stack, arg[argc], &stack_size);
 	ft_set_position(stack, stack_size, arg);
-	// ft_stack_print(stack, stack_size);
+	base = (t_base *)malloc(sizeof(t_base));
+	base->a = stack;
+	base->size_a = stack_size;
+	base->size_b = 0;
+	ft_sa(base);
+	ft_base_print(base);
 }

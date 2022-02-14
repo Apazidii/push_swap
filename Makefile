@@ -1,8 +1,9 @@
 NAME = main
 
-SRC = main.c		ft_stack_utils.c		ft_set_position.c
+SRC =		main.c			ft_stack_utils.c		ft_set_position.c	\
+			ft_prints.c		moves/ft_sa.c			moves/ft_ra.c	
 SRC_O = $(SRC:.c=.o)
-LIB = libft.a
+LIB = libft/libft.a
 
 CC = cc
 CFLAGS = -g
