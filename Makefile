@@ -1,4 +1,4 @@
-NAME = run
+NAME = main
 
 SRC = main.c		ft_stack_utils.c		ft_set_position.c
 SRC_O = $(SRC:.c=.o)
