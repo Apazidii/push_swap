@@ -40,14 +40,26 @@ t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size)
 	return (new);
 }
 
-t_stack	*ft_add_new_elem(t_stack **stack, t_stack *new, int *stack_size)
+t_stack *ft_add_new_elem_in_new_stack(t_stack *new, t_stack **stack, int *stack_size)
 {
-	new = (t_stack *)malloc(sizeof(t_stack));
-	new->prev = (*stack)->prev;
-	new->next = (*stack);
-	(*stack)->prev = new;
-	new->prev->next = new;
-	*stack_size += 1;
+	new->prev->next = new->next;
+	new->next->prev = new->prev;
+	new->next = new;
+	new->prev = new;
 	*stack = new;
+	(*stack_size)++;
+	return (new);
+}
+
+t_stack	*ft_add_new_elem(t_stack *new, t_stack **stack, int *stack_size)
+{
+	new->prev->next = new->next;
+	new->next->prev = new->prev;
+	new->next = (*stack);
+	new->prev = (*stack)->prev;
+	(*stack)->prev->next = new;
+	(*stack)->prev = new;
+	(*stack) = new;
+	(*stack_size)++;
 	return (new);
 }

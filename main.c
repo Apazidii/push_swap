@@ -40,6 +40,7 @@ int	main(int argc, char *argv[])
 	base->a = stack;
 	base->size_a = stack_size;
 	base->size_b = 0;
-	ft_sa(base);
+	ft_pa(base);
+	ft_pa(base);
 	ft_base_print(base);
 }
