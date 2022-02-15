@@ -34,9 +34,12 @@ typedef struct	s_base
 }		t_base;
 
 t_stack	*ft_create_new_stack(int value);
-t_stack	*ft_add_new_elem(t_stack *new, t_stack **stack, int *stack_size);
+
+t_stack	*ft_add_new_elem				(t_stack **new, t_stack **stack, int *stack_size);
+t_stack *ft_add_new_elem_in_new_stack	(t_stack **new, t_stack **stack, int *stack_size);
+
+
 t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size);
-t_stack *ft_add_new_elem_in_new_stack(t_stack *new, t_stack **stack, int *stack_size);
 void	ft_set_position(t_stack *stack, int stack_size, int *arg);
 
 //prints
@@ -48,6 +51,13 @@ void	ft_sa(t_base *base);
 void	ft_sb(t_base *base);
 void	ft_ss(t_base *base);
 void	ft_pa(t_base *base);
+void	ft_pb(t_base *base);
 void	ft_ra(t_base *base);
+void	ft_rb(t_base *base);
+void	ft_rr(t_base *base);
+void	ft_rra(t_base *base);
+void	ft_rrb(t_base *base);
+void	ft_rrr(t_base *base);
+
 
 #endif

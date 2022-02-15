@@ -29,6 +29,7 @@ int	main(int argc, char *argv[])
 	int			*arg;
 	int			stack_size;
 
+	//переделать преобразование в массив со сплитом
 	arg = ft_argv_to_arr(--argc, argv);
 	//добавить проверку на валидность
 	stack = ft_create_new_stack(arg[--argc]);
@@ -40,7 +41,7 @@ int	main(int argc, char *argv[])
 	base->a = stack;
 	base->size_a = stack_size;
 	base->size_b = 0;
-	ft_pa(base);
-	ft_pa(base);
+
+	ft_rra(base);
 	ft_base_print(base);
 }
