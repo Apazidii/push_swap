@@ -1,5 +1,4 @@
-// #include "push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
 int	is_numbers(char *s)
 {
@@ -12,7 +11,7 @@ int	is_numbers(char *s)
 	return (1);
 }
 
-int valid_arg(int argc, char **argv, int *res)
+int valid_arg(int argc, char **argv)
 {
 	int	i;
 
@@ -28,8 +27,13 @@ int valid_arg(int argc, char **argv, int *res)
 	return (1);
 }
 
-int main(int argc, char *argv[])
+int agr_to_arr(int argc, char **argv, int *res)
 {
-	int *res;
-	printf("%d\n", valid_arg(argc, argv, res));
+	char **arr;
+	int i;
+
+	if (!(valid_arg(argc, argv)))
+		error_exit("Error");
+	i = 1;
+	arr = (char **)malloc(sizeof(char *) * (argc - 1));
 }

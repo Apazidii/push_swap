@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/15 03:08:51 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/15 20:44:28 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,19 @@ int	main(int argc, char *argv[])
 	int			stack_size;
 
 	//переделать преобразование в массив со сплитом
-	arg = ft_argv_to_arr(--argc, argv);
-	//добавить проверку на валидность
-	stack = ft_create_new_stack(arg[--argc]);
-	stack_size = 1;
-	while (argc--)
-		ft_create_new_elem(&stack, arg[argc], &stack_size);
-	ft_set_position(stack, stack_size, arg);
-	base = (t_base *)malloc(sizeof(t_base));
-	base->a = stack;
-	base->size_a = stack_size;
-	base->size_b = 0;
+//	arg = ft_argv_to_arr(--argc, argv);
 
-	ft_rra(base);
-	ft_base_print(base);
+//	//добавить проверку на валидность
+//	stack = ft_create_new_stack(arg[--argc]);
+//	stack_size = 1;
+//	while (argc--)
+//		ft_create_new_elem(&stack, arg[argc], &stack_size);
+//	ft_set_position(stack, stack_size, arg);
+//	base = (t_base *)malloc(sizeof(t_base));
+//	base->a = stack;
+//	base->size_a = stack_size;
+//	base->size_b = 0;
+//
+//	ft_rra(base);
+//	ft_base_print(base);
 }

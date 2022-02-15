@@ -1,7 +1,8 @@
 NAME = main
 
 SRC =		main.c			ft_stack_utils.c		ft_set_position.c	\
-			ft_prints.c			
+			ft_valid.c		ft_general_utils.c\
+			ft_prints.c
 
 MOVES =		ft_sa.c		ft_sb.c		ft_ss.c	\
 			ft_ra.c		ft_rb.c		ft_rr.c	\
@@ -21,15 +22,17 @@ CFLAGS = -g
 
 RM = rm
 
-all: $(NAME)
+all: $(LIB) $(NAME)
 
-
+$(LIB):
+	make -C ./libft/
 
 clean:
 	$(RM) $(SRC_O)
-
+	make -C ./libft clean
 $(NAME): $(SRC_O)
 	$(CC) $(CFLAGS) $(SRC_O) $(LIB) -o $(NAME)
 
 fclean: clean
 	$(RM) $(NAME)
+	make -C ./libft/ fclean

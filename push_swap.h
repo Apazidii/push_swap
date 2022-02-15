@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -33,12 +34,13 @@ typedef struct	s_base
 	int				size_b;
 }		t_base;
 
-t_stack	*ft_create_new_stack(int value);
+//general utils
+void	error_exit(char *s);
 
+//list utils
+t_stack	*ft_create_new_stack(int value);
 t_stack	*ft_add_new_elem				(t_stack **new, t_stack **stack, int *stack_size);
 t_stack *ft_add_new_elem_in_new_stack	(t_stack **new, t_stack **stack, int *stack_size);
-
-
 t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size);
 void	ft_set_position(t_stack *stack, int stack_size, int *arg);
 
