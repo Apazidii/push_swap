@@ -44,9 +44,10 @@ t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size)
 	return (new);
 }
 
-t_stack *ft_add_new_elem_in_new_stack(t_stack **news, t_stack **stack, int *stack_size)
+t_stack	*ft_add_new_elem_in_new_stack(t_stack **news, \
+										t_stack **stack, int *stack_size)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = *news;
 	*news = new->next;
@@ -61,7 +62,7 @@ t_stack *ft_add_new_elem_in_new_stack(t_stack **news, t_stack **stack, int *stac
 
 t_stack	*ft_add_new_elem(t_stack **news, t_stack **stack, int *stack_size)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = *news;
 	*news = new->next;

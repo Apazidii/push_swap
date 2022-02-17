@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ss.c                                            :+:      :+:    :+:   */
+/*   ft_valid_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:08:11 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 18:08:11 by oem              ###   ########.fr       */
+/*   Created: 2022/02/17 17:55:11 by oem               #+#    #+#             */
+/*   Updated: 2022/02/17 17:55:58 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	ft_ss(t_base *base)
+int	is_numbers(char *s)
 {
-	ft_sa(base);
-	ft_sb(base);
+	while (*s != '\0')
+	{
+		if (!((*s >= '0' && *s <= '9') || *s == ' '))
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
+void	free_split(char **arr)
+{
+	char	**buf;
+
+	while (*arr)
+	{
+		buf = arr + 1;
+		free(arr);
+		arr = buf;
+	}
 }

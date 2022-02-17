@@ -16,9 +16,9 @@ int	min_in_arr(int *arr, int size, int lastmin)
 {
 	int	min;
 	int	i;
-	int f;
+	int	f;
 
-	min = (int)(((unsigned int) -1) /2);
+	min = (int)(((unsigned int) -1) / 2);
 	i = 0;
 	f = 0;
 	while (i < size)
@@ -40,7 +40,6 @@ void	ft_set_position(t_stack *stack, int stack_size, int *arg)
 	int		min;
 	t_stack	*start;
 	int		i;
-	int		j;
 
 	i = 0;
 	start = stack;

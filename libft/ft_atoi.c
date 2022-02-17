@@ -76,6 +76,6 @@ int	ft_atoi(const char *s)
 		str++;
 	}
 	if (b)
-		n = n *-1;
+		n = n * -1;
 	return (check(n, nospace(ss)));
 }

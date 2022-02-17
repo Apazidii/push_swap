@@ -1,17 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_valid.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/17 17:53:22 by oem               #+#    #+#             */
+/*   Updated: 2022/02/17 17:55:59 by oem              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	is_numbers(char *s)
-{
-	while (*s != '\0')
-	{
-		if (!((*s >= '0' && *s <= '9') || *s == ' '))
-			return (0);
-		s++;
-	}
-	return (1);
-}
-
-int valid_arg(int argc, char **argv)
+int	valid_arg(int argc, char **argv)
 {
 	int	i;
 
@@ -27,10 +28,10 @@ int valid_arg(int argc, char **argv)
 	return (1);
 }
 
-char *str_join(char *s1, char *s2)
+char	*str_join(char *s1, char *s2)
 {
-	char *str;
-	char *res;
+	char	*str;
+	char	*res;
 
 	str = ft_strjoin(s1, " ");
 	res = ft_strjoin(str, s2);
@@ -40,15 +41,15 @@ char *str_join(char *s1, char *s2)
 	return (res);
 }
 
-int *atoi_arr(char **arr)
+int	*atoi_arr(char **arr)
 {
-	int i;
-	int j;
-	int *res;
+	int	i;
+	int	j;
+	int	*res;
 
 	i = 0;
 	j = 0;
-	while(arr[i] != NULL)
+	while (arr[i] != NULL)
 		i++;
 	res = (int *) malloc(sizeof(int) * i);
 	if (!res)
@@ -61,19 +62,7 @@ int *atoi_arr(char **arr)
 	return (res);
 }
 
-void free_split(char **arr)
-{
-	char **buf;
-
-	while (*arr)
-	{
-		buf = arr + 1;
-		free(arr);
-		arr = buf;
-	}
-}
-
-int agr_to_arr(int argc, char **argv, int **res)
+int	agr_to_arr(int argc, char **argv, int **res)
 {
 	int		i;
 	char	*str;

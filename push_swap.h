@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:58:05 by oem               #+#    #+#             */
-/*   Updated: 2022/02/16 03:51:04 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 17:58:19 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,36 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	int				value;
-	int 			position;
+	int				position;
 }			t_stack;
 
-typedef struct	s_base
+typedef struct s_base
 {
 	struct s_stack	*a;
 	struct s_stack	*b;
 	int				size_a;
 	int				size_b;
-}		t_base;
+}				t_base;
 
 //general utils
 void	error_exit(char *s);
 
 //free
 void	ft_free_base(t_base *base);
-void 	ft_free_stack(t_stack *s, int *size_stack);
+void	ft_free_stack(t_stack *s, int *size_stack);
+
+//valid utils
+int		is_numbers(char *s);
+void	free_split(char **arr);
 
 //list utils
 t_stack	*ft_create_new_stack(int value);
-t_stack	*ft_add_new_elem				(t_stack **new, t_stack **stack, int *stack_size);
-t_stack *ft_add_new_elem_in_new_stack	(t_stack **new, t_stack **stack, int *stack_size);
+t_stack	*ft_add_new_elem(t_stack **new, t_stack **stack, int *stack_size);
+t_stack	*ft_add_new_elem_in_new_stack(t_stack **new, \
+										t_stack **stack, int *stack_size);
 t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size);
 void	ft_set_position(t_stack *stack, int stack_size, int *arg);
-
-int agr_to_arr(int argc, char **argv, int **res);
+int		agr_to_arr(int argc, char **argv, int **res);
 
 //prints
 void	ft_base_print(t_base *base);
@@ -66,6 +70,4 @@ void	ft_rr(t_base *base);
 void	ft_rra(t_base *base);
 void	ft_rrb(t_base *base);
 void	ft_rrr(t_base *base);
-
-
 #endif
