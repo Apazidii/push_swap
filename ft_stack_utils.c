@@ -18,7 +18,7 @@ t_stack	*ft_create_new_stack(int value)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (new == NULL)
-		error_exit("Error malloc\n");
+		return (NULL);
 	new->value = value;
 	new->position = -1;
 	new->next = new;
@@ -32,7 +32,7 @@ t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (new == NULL)
-		error_exit("Error malloc\n");
+		return (NULL);
 	new->value = value;
 	new->position = -1;
 	new->prev = (*stack)->prev;

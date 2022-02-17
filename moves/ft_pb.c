@@ -10,4 +10,6 @@ void	ft_pb(t_base *base)
 	else
 		ft_add_new_elem_in_new_stack(&base->a, &base->b, &base->size_b);
 	base->size_a--;
+	if (base->size_a == 0)
+		base->a = NULL;
 }
