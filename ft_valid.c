@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:53:22 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 20:03:46 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 22:00:58 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	*atoi_arr(char **arr, int *argc)
 	int	i;
 	int	j;
 	int	*res;
+	int	f;
 
 	i = 0;
 	j = 0;
@@ -58,7 +59,12 @@ int	*atoi_arr(char **arr, int *argc)
 		return (NULL);
 	while (j < i)
 	{
-		res[j] = ft_atoi(arr[j]);
+		res[j] = ft_atoi_int(arr[j], &f);
+		if (!f)
+		{
+			free(res);
+			return (NULL);
+		}
 		j++;
 	}
 	*argc = i;
@@ -77,10 +83,13 @@ int	str_to_intarr(char *str, int **res, int *argc)
 	}
 	free(str);
 	*res = atoi_arr(arr, argc);
+	free_split(arr);
 	if (!(*res))
-	{
-		free_split(arr);
 		return (0);
+	if (find_double(*res, *argc))
+	{
+		free(*res);
+		error_exit("Error\n");
 	}
 	return (1);
 }
@@ -89,7 +98,6 @@ int	agr_to_arr(int *argc, char **argv, int **res)
 {
 	int		i;
 	char	*str;
-	char	**arr;
 
 	if (!(valid_arg(*argc, argv)))
 		error_exit("Error\n");

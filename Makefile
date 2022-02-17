@@ -1,8 +1,8 @@
 NAME = main
 
-SRC =		main.c			ft_stack_utils.c		ft_set_position.c	\
-			ft_valid.c		ft_valid_utils.c		ft_general_utils.c	\
-			ft_free_utils.c	ft_prints.c
+SRC =		main.c				ft_stack_utils.c		ft_set_position.c	\
+			ft_valid.c			ft_valid_utils.c		ft_valid_atoi.c		\
+			ft_general_utils.c	ft_free_utils.c			ft_prints.c
 
 MOVES =		ft_sa.c		ft_sb.c		ft_ss.c	\
 			ft_ra.c		ft_rb.c		ft_rr.c	\
@@ -24,8 +24,12 @@ RM = rm
 
 all: $(LIB) $(NAME)
 
-$(LIB):
-	make -C ./libft/
+#$(LIB):
+#	make -C ./libft/
+
+libre:
+	make -C ./libft re
+	make -C ./libft clean
 
 clean:
 	$(RM) $(SRC_O)

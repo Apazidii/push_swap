@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:55:11 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 17:55:58 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 19:37:10 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,20 @@ void	free_split(char **arr)
 	}
 	free(start);
 }
+
+int	find_double(int *arr, int size)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i;
+		while (j++ < size)
+			if (arr[i] == arr[j])
+				return (1);
+		i++;
+	}
+}
+

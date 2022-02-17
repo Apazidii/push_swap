@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:58:05 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 17:58:19 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 21:27:09 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -43,7 +44,9 @@ void	ft_free_stack(t_stack *s, int *size_stack);
 
 //valid utils
 int		is_numbers(char *s);
+int		ft_atoi_int(const char *s, int *f);
 void	free_split(char **arr);
+int		find_double(int *arr, int size);
 
 //list utils
 t_stack	*ft_create_new_stack(int value);

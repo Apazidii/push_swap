@@ -6,21 +6,11 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 20:24:11 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 20:26:12 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	*ft_argv_to_arr(int size, char *argv[])
-{
-	int	*res;
-
-	res = (int *)malloc(sizeof(int) * size);
-	while (size--)
-		res[size] = ft_atoi(argv[size + 1]);
-	return (res);
-}
 
 int	main(int argc, char *argv[])
 {
