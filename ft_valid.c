@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:53:22 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 17:55:59 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 20:03:46 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ char	*str_join(char *s1, char *s2)
 	char	*res;
 
 	str = ft_strjoin(s1, " ");
+	if (!str)
+		return (NULL);
 	res = ft_strjoin(str, s2);
-	if (!(str && res))
+	if (!res)
 		return (NULL);
 	free(str);
 	return (res);
 }
 
-int	*atoi_arr(char **arr)
+int	*atoi_arr(char **arr, int *argc)
 {
 	int	i;
 	int	j;
@@ -59,25 +61,14 @@ int	*atoi_arr(char **arr)
 		res[j] = ft_atoi(arr[j]);
 		j++;
 	}
+	*argc = i;
 	return (res);
 }
 
-int	agr_to_arr(int argc, char **argv, int **res)
+int	str_to_intarr(char *str, int **res, int *argc)
 {
-	int		i;
-	char	*str;
 	char	**arr;
 
-	if (!(valid_arg(argc, argv)))
-		error_exit("Error\n");
-	str = argv[1];
-	i = 2;
-	while (i < argc)
-	{
-		str = str_join(str, argv[i++]);
-		if (!str)
-			return (0);
-	}
 	arr = ft_split(str, ' ');
 	if (!arr)
 	{
@@ -85,11 +76,30 @@ int	agr_to_arr(int argc, char **argv, int **res)
 		return (0);
 	}
 	free(str);
-	*res = atoi_arr(arr);
+	*res = atoi_arr(arr, argc);
 	if (!(*res))
 	{
 		free_split(arr);
 		return (0);
 	}
 	return (1);
+}
+
+int	agr_to_arr(int *argc, char **argv, int **res)
+{
+	int		i;
+	char	*str;
+	char	**arr;
+
+	if (!(valid_arg(*argc, argv)))
+		error_exit("Error\n");
+	str = argv[1];
+	i = 2;
+	while (i < *argc)
+	{
+		str = str_join(str, argv[i++]);
+		if (!str)
+			return (0);
+	}
+	return (str_to_intarr(str, res, argc));
 }

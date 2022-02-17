@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/16 06:24:51 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/17 20:24:11 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(int argc, char *argv[])
 	t_base		*base;
 	int			*arg;
 
-	agr_to_arr(argc, argv, &arg);
+	if (!agr_to_arr(&argc, argv, &arg))
+		error_exit("Error malloc\n");
 	//переделать преобразование в массив со сплитом
 
 

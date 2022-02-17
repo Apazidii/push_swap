@@ -52,7 +52,7 @@ t_stack	*ft_add_new_elem_in_new_stack(t_stack **new, \
 										t_stack **stack, int *stack_size);
 t_stack	*ft_create_new_elem(t_stack **stack, int value, int *stack_size);
 void	ft_set_position(t_stack *stack, int stack_size, int *arg);
-int		agr_to_arr(int argc, char **argv, int **res);
+int		agr_to_arr(int *argc, char **argv, int **res);
 
 //prints
 void	ft_base_print(t_base *base);

@@ -26,11 +26,14 @@ int	is_numbers(char *s)
 void	free_split(char **arr)
 {
 	char	**buf;
+	char	**start;
 
+	start = arr;
 	while (*arr)
 	{
 		buf = arr + 1;
-		free(arr);
+		free(*arr);
 		arr = buf;
 	}
+	free(start);
 }
