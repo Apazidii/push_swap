@@ -66,9 +66,8 @@ int	ft_atoi_int(const char *s, int *f)
 	str = nospace(ss);
 	if (*str == '+' || *str == '-')
 	{
-		if (*str == '-')
+		if (*(str++) == '-')
 			b++;
-		str++;
 	}
 	while (*str != '\0' && *str >= '0' && *str <= '9')
 	{

@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void sort_five(t_base *base)
+void	sort_five(t_base *base)
 {
 	if (base->a->next->position == 4)
 		ft_sa(base);

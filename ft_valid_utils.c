@@ -23,7 +23,7 @@ int	is_numbers(char *s)
 	return (1);
 }
 
-int is_only_numbers(char *s)
+int	is_only_numbers(char *s)
 {
 	if (*s == '+' || *s == '-')
 		s++;
@@ -54,7 +54,7 @@ void	free_split(char **arr)
 int	find_double(int *arr, int size)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (i < size)

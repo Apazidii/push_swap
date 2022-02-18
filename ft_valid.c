@@ -60,8 +60,7 @@ int	*atoi_arr(char **arr, int *argc)
 	while (j < i)
 	{
 		res[j] = ft_atoi_int(arr[j], &f);
-		f = is_only_numbers(arr[j]);
-		if (!f)
+		if (!f && is_only_numbers(arr[j]))
 		{
 			free(res);
 			free_split(arr);

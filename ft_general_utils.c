@@ -18,10 +18,10 @@ void	error_exit(char *s)
 	exit(0);
 }
 
-int max_in_stack(t_stack *stack, int size)
+int	max_in_stack(t_stack *stack, int size)
 {
-	int max;
-	int i;
+	int	max;
+	int	i;
 
 	max = stack->position;
 	i = 0;
@@ -35,9 +35,9 @@ int max_in_stack(t_stack *stack, int size)
 	return (max);
 }
 
-int elem_upper_middle(t_stack *stack, int size, int value)
+int	elem_upper_middle(t_stack *stack, int size, int value)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack->position != value)
@@ -45,7 +45,7 @@ int elem_upper_middle(t_stack *stack, int size, int value)
 		stack = stack->next;
 		i++;
 	}
-	if (i >= size/2)
+	if (i >= size / 2)
 		return (1);
 	else
 		return (0);

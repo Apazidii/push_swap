@@ -37,4 +37,3 @@ void	sort_three(t_base *base, int start)
 		}
 	}
 }
-

@@ -14,7 +14,7 @@
 
 void	butterfly_to_arr(t_base *base)
 {
-	int max;
+	int	max;
 	int	f;
 
 	while (base->size_b != 0)
@@ -55,7 +55,6 @@ static void	ft_sort(t_base *base, int action)
 	}
 	butterfly_to_arr(base);
 }
-
 
 void	sort_many(t_base *base)
 {

@@ -6,14 +6,14 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/18 06:05:05 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/18 06:05:35 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //5 4 "31 20" 0
 
-void add_all_args(t_base *base, int *arg, int argc)
+void	add_all_args(t_base *base, int *arg, int argc)
 {
 	while (argc--)
 	{
@@ -26,7 +26,7 @@ void add_all_args(t_base *base, int *arg, int argc)
 	}
 }
 
-void is_sort(int *arg, int size)
+void	is_sort(int *arg, int size)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ int	main(int argc, char *argv[])
 		exit(0);
 	if (!agr_to_arr(&argc, argv, &arg))
 		error_exit("Error malloc\n");
-	is_sort(arg,argc);
+	is_sort(arg, argc);
 	base = (t_base *)malloc(sizeof(t_base));
 	if (!base)
 		error_exit("Error malloc\n");
@@ -70,6 +70,7 @@ int	main(int argc, char *argv[])
 	add_all_args(base, arg, argc);
 	ft_set_position(base->a, base->size_a, arg);
 	get_sort(base);
-//	ft_base_print(base);
+	free(arg);
+	ft_free_base(base);
 	return (0);
 }
