@@ -23,4 +23,5 @@ void	ft_pb(t_base *base)
 	base->size_a--;
 	if (base->size_a == 0)
 		base->a = NULL;
+	write(1, "pb\n", 3);
 }

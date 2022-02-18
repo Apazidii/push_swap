@@ -6,38 +6,70 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 20:26:12 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/18 06:05:05 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//5 4 "31 20" 0
+
+void add_all_args(t_base *base, int *arg, int argc)
+{
+	while (argc--)
+	{
+		if (!(ft_create_new_elem(&base->a, arg[argc], &base->size_a)))
+		{
+			ft_free_base(base);
+			free(arg);
+			error_exit("Error malloc\n");
+		}
+	}
+}
+
+void is_sort(int *arg, int size)
+{
+	int	i;
+
+	if (size <= 1)
+	{
+		free(arg);
+		exit(0);
+	}
+	i = 1;
+	while (i < size)
+	{
+		if (arg[i - 1] > arg[i])
+			return ;
+		i++;
+	}
+	free(arg);
+	exit(0);
+}
 
 int	main(int argc, char *argv[])
 {
-	t_stack		*stack;
 	t_base		*base;
 	int			*arg;
 
+	if (argc < 2)
+		exit(0);
 	if (!agr_to_arr(&argc, argv, &arg))
 		error_exit("Error malloc\n");
-	//переделать преобразование в массив со сплитом
-
-
-	//добавить проверку на валидность
-	stack = ft_create_new_stack(arg[--argc]);
-	if (!stack)
-		error_exit("Error malloc\n");
+	is_sort(arg,argc);
 	base = (t_base *)malloc(sizeof(t_base));
-	base->a = stack;
+	if (!base)
+		error_exit("Error malloc\n");
 	base->size_b = 0;
-	base->size_a = 0;
-	while (argc--)
-		if (!(ft_create_new_elem(&stack, arg[argc], &base->size_a)))
-		{
-			ft_free_base(base);
-			error_exit("Error malloc\n");
-		}
-	ft_set_position(stack, base->size_a, arg);
-
-	ft_base_print(base);
+	base->size_a = 1;
+	base->a = ft_create_new_stack(arg[--argc]);
+	if (!base->a)
+	{
+		free(base);
+		error_exit("Error malloc\n");
+	}
+	add_all_args(base, arg, argc);
+	ft_set_position(base->a, base->size_a, arg);
+	get_sort(base);
+//	ft_base_print(base);
+	return (0);
 }

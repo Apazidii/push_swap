@@ -16,4 +16,5 @@ void	ft_ss(t_base *base)
 {
 	ft_sa(base);
 	ft_sb(base);
+	write(1, "ss\n", 3);
 }

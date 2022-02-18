@@ -28,4 +28,5 @@ void	ft_sb(t_base *base)
 	stack1->prev = stack2;
 	stack2->next = stack1;
 	base->b = stack2;
+	write(1, "sb\n", 3);
 }

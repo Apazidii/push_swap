@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:53:22 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 22:00:58 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/18 05:35:38 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ int	*atoi_arr(char **arr, int *argc)
 	while (j < i)
 	{
 		res[j] = ft_atoi_int(arr[j], &f);
+		f = is_only_numbers(arr[j]);
 		if (!f)
 		{
 			free(res);
-			return (NULL);
+			free_split(arr);
+			error_exit("Error\n");
 		}
 		j++;
 	}
@@ -101,7 +103,7 @@ int	agr_to_arr(int *argc, char **argv, int **res)
 
 	if (!(valid_arg(*argc, argv)))
 		error_exit("Error\n");
-	str = argv[1];
+	str = ft_strdup(argv[1]);
 	i = 2;
 	while (i < *argc)
 	{

@@ -6,7 +6,7 @@
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:55:11 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 19:37:10 by oem              ###   ########.fr       */
+/*   Updated: 2022/02/18 06:42:36 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,20 @@ int	is_numbers(char *s)
 {
 	while (*s != '\0')
 	{
-		if (!((*s >= '0' && *s <= '9') || *s == ' '))
+		if (!((*s >= '0' && *s <= '9') || *s == ' ' || *s == '-'))
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
+int is_only_numbers(char *s)
+{
+	if (*s == '+' || *s == '-')
+		s++;
+	while (*s != '\0')
+	{
+		if (!(*s >= '0' && *s <= '9'))
 			return (0);
 		s++;
 	}
@@ -47,10 +60,10 @@ int	find_double(int *arr, int size)
 	while (i < size)
 	{
 		j = i;
-		while (j++ < size)
-			if (arr[i] == arr[j])
+		while (j < size - 1)
+			if (arr[i] == arr[++j])
 				return (1);
 		i++;
 	}
+	return (0);
 }
-

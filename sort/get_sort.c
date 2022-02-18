@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pa.c                                            :+:      :+:    :+:   */
+/*   get_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 18:05:51 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 18:05:51 by oem              ###   ########.fr       */
+/*   Created: 2022/02/18 02:31:25 by oem               #+#    #+#             */
+/*   Updated: 2022/02/18 03:52:09 by oem              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_pa(t_base *base)
+void	get_sort(t_base *base)
 {
-	if (base->size_b == 0)
+	if (base->size_a == 1)
 		return ;
-	if (base->size_a != 0)
-		ft_add_new_elem(&base->b, &base->a, &base->size_a);
+	else if (base->size_a == 2)
+		sort_two(base);
+	else if (base->size_a == 3)
+		sort_three(base, 0);
+	else if (base->size_a == 4)
+		sort_four(base);
+	else if (base->size_a == 5)
+		sort_five(base);
 	else
-		ft_add_new_elem_in_new_stack(&base->b, &base->a, &base->size_a);
-	base->size_b--;
-	if (base->size_b == 0)
-		base->b = NULL;
-	write(1, "pa\n", 3);
+		sort_many(base);
 }
