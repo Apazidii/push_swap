@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_set_position.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dgalactu <dgalactu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 08:38:31 by oem               #+#    #+#             */
-/*   Updated: 2022/02/18 02:03:42 by oem              ###   ########.fr       */
+/*   Created: 2022/02/12 08:38:31 by dgalactu          #+#    #+#             */
+/*   Updated: 2022/02/18 09:11:47 by dgalactu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(int *a, int n)
+static void	sort(int *a, int n)
 {
 	int	i;
 	int	j;

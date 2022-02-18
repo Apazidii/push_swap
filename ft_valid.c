@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_valid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dgalactu <dgalactu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 17:53:22 by oem               #+#    #+#             */
-/*   Updated: 2022/02/18 05:35:38 by oem              ###   ########.fr       */
+/*   Created: 2022/02/17 17:53:22 by dgalactu          #+#    #+#             */
+/*   Updated: 2022/02/18 09:11:47 by dgalactu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	valid_arg(int argc, char **argv)
 	return (1);
 }
 
-char	*str_join(char *s1, char *s2)
+static char	*str_join(char *s1, char *s2)
 {
 	char	*str;
 	char	*res;
@@ -43,7 +43,7 @@ char	*str_join(char *s1, char *s2)
 	return (res);
 }
 
-int	*atoi_arr(char **arr, int *argc)
+static int	*atoi_arr(char **arr, int *argc)
 {
 	int	i;
 	int	j;
@@ -72,7 +72,7 @@ int	*atoi_arr(char **arr, int *argc)
 	return (res);
 }
 
-int	str_to_intarr(char *str, int **res, int *argc)
+static int	str_to_intarr(char *str, int **res, int *argc)
 {
 	char	**arr;
 

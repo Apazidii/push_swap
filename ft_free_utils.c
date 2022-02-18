@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dgalactu <dgalactu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 17:58:18 by oem               #+#    #+#             */
-/*   Updated: 2022/02/17 17:58:19 by oem              ###   ########.fr       */
+/*   Created: 2022/02/17 17:58:18 by dgalactu          #+#    #+#             */
+/*   Updated: 2022/02/18 09:11:47 by dgalactu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_free_stack(t_stack *s, int *size_stack)
 	t_stack	*f;
 	t_stack	*b;
 
+	if (!s)
+		return ;
 	f = s;
 	s = s->next;
 	if (!s)

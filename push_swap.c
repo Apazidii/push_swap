@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oem <oem@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: dgalactu <dgalactu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 11:59:34 by oem               #+#    #+#             */
-/*   Updated: 2022/02/18 06:05:35 by oem              ###   ########.fr       */
+/*   Created: 2022/02/10 11:59:34 by dgalactu          #+#    #+#             */
+/*   Updated: 2022/02/18 09:11:47 by dgalactu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 //5 4 "31 20" 0
 
-void	add_all_args(t_base *base, int *arg, int argc)
+static void	add_all_args(t_base *base, int *arg, int argc)
 {
 	while (argc--)
 	{
@@ -26,7 +26,7 @@ void	add_all_args(t_base *base, int *arg, int argc)
 	}
 }
 
-void	is_sort(int *arg, int size)
+static void	is_sort(int *arg, int size)
 {
 	int	i;
 

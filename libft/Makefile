@@ -16,12 +16,12 @@ FUNCS 	=		ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	ft_isascii.c\
 				ft_itoa.c		ft_strmapi.c	ft_striteri.c	ft_putchar_fd.c\
 				ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c\
 
-FUNCS_B	=		ft_lstnew.c			ft_lstadd_front.c		ft_lstsize.c\
-				ft_lstlast.c		ft_lstadd_back.c		ft_lstdelone.c\
-				ft_lstclear.c		ft_lstiter.c			ft_lstmap.c
+#FUNCS_B	=		ft_lstnew.c			ft_lstadd_front.c		ft_lstsize.c\
+#				ft_lstlast.c		ft_lstadd_back.c		ft_lstdelone.c\
+#				ft_lstclear.c		ft_lstiter.c			ft_lstmap.c
 
 FUNCS_O		=	$(FUNCS:.c=.o)
-FUNCS_O_B	=	$(FUNCS_B:.c=.o)
+#FUNCS_O_B	=	$(FUNCS_B:.c=.o)
 
 
 .c.o: $(FUNCS)
@@ -30,13 +30,13 @@ FUNCS_O_B	=	$(FUNCS_B:.c=.o)
 $(NAME): $(FUNCS_O)
 	$(AR) $@ $^
 
-bonus: $(FUNCS_O_B)
-	$(AR) $(NAME) $^
+#bonus: $(FUNCS_O_B)
+#	$(AR) $(NAME) $^
 
 all: $(NAME)
 
 clean:
-	$(RM) $(FUNCS_O) $(FUNCS_O_B)
+	$(RM) $(FUNCS_O) #$(FUNCS_O_B)
 
 fclean: clean
 	$(RM) $(NAME)
