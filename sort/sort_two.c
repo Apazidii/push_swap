@@ -15,5 +15,5 @@
 void	sort_two(t_base *base)
 {
 	if (base->a->value > base->a->next->value)
-		ft_sa(base);
+		ft_sa(base, 1);
 }

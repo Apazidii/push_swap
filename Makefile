@@ -35,7 +35,7 @@ LIB = libft/libft.a
 CC = cc
 CFLAGS = -g
 
-RM = rm
+RM = rm -rf
 
 all: $(LIB) $(NAME)
 
@@ -61,3 +61,5 @@ clean:
 fclean: clean
 	$(RM) $(NAME) $(NAME_BONUS)
 	make -C ./libft/ fclean
+
+re: fclean all

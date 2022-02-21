@@ -24,11 +24,11 @@ void	butterfly_to_arr(t_base *base)
 		while (base->b->position != max)
 		{
 			if (!f)
-				ft_rb(base);
+				ft_rb(base, 1);
 			else
-				ft_rrb(base);
+				ft_rrb(base, 1);
 		}
-		ft_pa(base);
+		ft_pa(base, 1);
 	}
 }
 
@@ -41,17 +41,17 @@ static void	ft_sort(t_base *base, int action)
 	{
 		if (count > 1 && base->a->position <= count)
 		{
-			ft_pb(base);
-			ft_rb(base);
+			ft_pb(base, 1);
+			ft_rb(base, 1);
 			count++;
 		}
 		else if (base->a->position <= (count + action))
 		{
-			ft_pb(base);
+			ft_pb(base, 1);
 			count++;
 		}
 		else if (base->a->position >= count)
-			ft_ra(base);
+			ft_ra(base, 1);
 	}
 	butterfly_to_arr(base);
 }

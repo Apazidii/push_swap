@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_pb(t_base *base)
+void	ft_pb(t_base *base, int print)
 {
 	if (base->size_a == 0)
 		return ;
@@ -23,5 +23,6 @@ void	ft_pb(t_base *base)
 	base->size_a--;
 	if (base->size_a == 0)
 		base->a = NULL;
-	write(1, "pb\n", 3);
+    if (print)
+        write(1, "pb\n", 3);
 }

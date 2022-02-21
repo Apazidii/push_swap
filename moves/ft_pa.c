@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_pa(t_base *base)
+void	ft_pa(t_base *base, int print)
 {
 	if (base->size_b == 0)
 		return ;
@@ -23,5 +23,6 @@ void	ft_pa(t_base *base)
 	base->size_b--;
 	if (base->size_b == 0)
 		base->b = NULL;
-	write(1, "pa\n", 3);
+    if (print)
+        write(1, "pa\n", 3);
 }

@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-void	ft_rrr(t_base *base)
+void	ft_rrr(t_base *base, int print)
 {
-	ft_rra(base);
-	ft_rrb(base);
-	write(1, "rrr\n", 4);
+	ft_rra(base, print);
+	ft_rrb(base, print);
+	if (print)
+		write(1, "rrr\n", 4);
 }

@@ -12,10 +12,11 @@
 
 #include "../push_swap.h"
 
-void	ft_rrb(t_base *base)
+void	ft_rrb(t_base *base, int print)
 {
 	if (base->size_b <= 1)
 		return ;
 	base->b = base->b->prev;
-	write(1, "rrb\n", 4);
+	if (print)
+		write(1, "rrb\n", 4);
 }

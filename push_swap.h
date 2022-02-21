@@ -73,15 +73,15 @@ void	ft_base_print(t_base *base);
 void	ft_stack_print(t_stack *stack, int stack_size, char c);
 
 //moves
-void	ft_sa(t_base *base);
-void	ft_sb(t_base *base);
-void	ft_ss(t_base *base);
-void	ft_pa(t_base *base);
-void	ft_pb(t_base *base);
-void	ft_ra(t_base *base);
-void	ft_rb(t_base *base);
-void	ft_rr(t_base *base);
-void	ft_rra(t_base *base);
-void	ft_rrb(t_base *base);
-void	ft_rrr(t_base *base);
+void	ft_sa(t_base *base, int print);
+void	ft_sb(t_base *base, int print);
+void	ft_ss(t_base *base, int print);
+void	ft_pa(t_base *base, int print);
+void	ft_pb(t_base *base, int print);
+void	ft_ra(t_base *base, int print);
+void	ft_rb(t_base *base, int print);
+void	ft_rr(t_base *base, int print);
+void	ft_rra(t_base *base, int print);
+void	ft_rrb(t_base *base, int print);
+void	ft_rrr(t_base *base, int print);
 #endif

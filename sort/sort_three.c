@@ -16,24 +16,24 @@ void	sort_three(t_base *base, int start)
 {
 	if (base->a->position == start)
 	{
-		ft_sa(base);
-		ft_ra(base);
+		ft_sa(base, 1);
+		ft_ra(base, 1);
 	}
 	else if (base->a->position == start + 1)
 	{
 		if (base->a->next->position == start)
-			ft_sa(base);
+			ft_sa(base, 1);
 		else
-			ft_rra(base);
+			ft_rra(base, 1);
 	}
 	else if (base->a->position == start + 2)
 	{
 		if (base->a->next->position == start)
-			ft_ra(base);
+			ft_ra(base, 1);
 		else
 		{
-			ft_sa(base);
-			ft_rra(base);
+			ft_sa(base, 1);
+			ft_rra(base, 1);
 		}
 	}
 }

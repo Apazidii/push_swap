@@ -12,12 +12,13 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+# define BUFFER_SIZE 42
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}				t_list;
+    char			arr[BUFFER_SIZE + 1];
+    unsigned int	len;
+    struct s_list	*next;
+}	t_list;
 
 int				ft_isalpha(int ch);
 int				ft_isdigit(int ch);

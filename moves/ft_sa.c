@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	ft_sa(t_base *base)
+void	ft_sa(t_base *base, int print)
 {
 	t_stack	*stack1;
 	t_stack	*stack2;
@@ -28,5 +28,6 @@ void	ft_sa(t_base *base)
 	stack1->prev = stack2;
 	stack2->next = stack1;
 	base->a = stack2;
-	write(1, "sa\n", 3);
+	if (print)
+		write(1, "sa\n", 3);
 }
