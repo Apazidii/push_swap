@@ -12,7 +12,7 @@
 
 #include "push_swap_bonus.h"
 
-static void apply_cmd(char *text, t_base *base)
+static void apply_cmd(char *text, t_base *base, int *f)
 {
 	if (ft_strncmp("pa\n", text, 3) == 0)
 		ft_pa(base, 0);
@@ -36,6 +36,8 @@ static void apply_cmd(char *text, t_base *base)
 		ft_sb(base, 0);
 	else if (ft_strncmp("ss\n", text, 3) == 0)
 		ft_ss(base, 0);
+	else
+		*f = 1;
 }
 
 static int is_sort(t_base *base)
@@ -56,17 +58,21 @@ static int is_sort(t_base *base)
 
 void get_command(t_base *base)
 {
-	char *str;
+	char	*str;
+	int		f;
 
+	f = 0;
 	str = get_next_line(0);
 	while (str)
 	{
-		apply_cmd(str, base);
+		apply_cmd(str, base, &f);
 		free(str);
+		if (!f)
+			return ;
 		str = get_next_line(0);
 	}
 	if (is_sort(base))
 		write(1, "OK\n", 3);
 	else
-		write(1, "KO\n",3);
+		write(1, "KO\n", 3);
 }
