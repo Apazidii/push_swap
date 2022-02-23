@@ -28,18 +28,24 @@ int	valid_arg(int argc, char **argv)
 	return (1);
 }
 
-static char	*str_join(char *s1, char *s2)
+char	*strj(char *s1, char *s2)
 {
-	char	*str;
 	char	*res;
+	int		l;
+	int		i;
 
-	str = ft_strjoin(s1, " ");
-	if (!str)
-		return (NULL);
-	res = ft_strjoin(str, s2);
-	if (!res)
-		return (NULL);
-	free(str);
+	l = ft_strlen(s1) + ft_strlen(s2) + 2;
+	res = (char *)malloc(sizeof(char) * l);
+	i = 0;
+	l = 0;
+	while (s1[l] != '\0')
+		res[i++] = s1[l++];
+	l = 0;
+	res[i++] = ' ';
+	while (s2[l] != '\0')
+		res[i++] = s2[l++];
+	res[i] = '\0';
+	free(s1);
 	return (res);
 }
 
@@ -106,7 +112,7 @@ int	agr_to_arr(int *argc, char **argv, int **res)
 	i = 2;
 	while (i < *argc)
 	{
-		str = str_join(str, argv[i++]);
+		str = strj(str, argv[i++]);
 		if (!str)
 			return (0);
 	}

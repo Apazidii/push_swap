@@ -17,6 +17,6 @@ void	ft_ra(t_base *base, int print)
 	if (base->size_a <= 1)
 		return ;
 	base->a = base->a->next;
-    if (print)
-        write(1, "ra\n", 3);
+	if (print)
+		write(1, "ra\n", 3);
 }

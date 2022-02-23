@@ -16,6 +16,6 @@ void	ft_rr(t_base *base, int print)
 {
 	ft_ra(base, print);
 	ft_rb(base, print);
-    if (print)
+	if (print)
 		write(1, "rr\n", 3);
 }

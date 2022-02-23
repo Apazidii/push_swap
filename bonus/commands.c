@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgalactu <dgalactu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dgalactu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 13:10:49 by dgalactu          #+#    #+#             */
-/*   Updated: 2022/02/21 13:10:49 by dgalactu         ###   ########.fr       */
+/*   Created: 2022/02/23 05:35:32 by dgalactu          #+#    #+#             */
+/*   Updated: 2022/02/23 05:35:33 by dgalactu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-static void apply_cmd(char *text, t_base *base, int *f)
+static void	apply_cmd(char *text, t_base *base, int *f)
 {
 	if (ft_strncmp("pa\n", text, 3) == 0)
 		ft_pa(base, 0);
@@ -40,23 +40,26 @@ static void apply_cmd(char *text, t_base *base, int *f)
 		*f = 1;
 }
 
-static int is_sort(t_base *base)
+static int	is_sort(t_base *base)
 {
-	int i;
+	int		i;
+	t_stack	*stack;
 
 	if (!base->a)
 		return (0);
+	stack = base->a;
 	i = 0;
 	while (i < base->size_a - 1)
 	{
-		if (base->a->value >= base->a->next->value)
+		if (stack->value >= stack->next->value)
 			return (0);
+		stack = stack->next;
 		i++;
 	}
 	return (1);
 }
 
-void get_command(t_base *base)
+void	get_command(t_base *base)
 {
 	char	*str;
 	int		f;
@@ -67,7 +70,9 @@ void get_command(t_base *base)
 	{
 		apply_cmd(str, base, &f);
 		free(str);
-		if (!f)
+		if (f)
+			write(2, "Error\n", 6);
+		if (f)
 			return ;
 		str = get_next_line(0);
 	}

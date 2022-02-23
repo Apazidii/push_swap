@@ -23,6 +23,6 @@ void	ft_pa(t_base *base, int print)
 	base->size_b--;
 	if (base->size_b == 0)
 		base->b = NULL;
-    if (print)
-        write(1, "pa\n", 3);
+	if (print)
+		write(1, "pa\n", 3);
 }

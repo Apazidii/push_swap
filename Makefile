@@ -32,8 +32,14 @@ SRC_O = $(SRC:.c=.o)
 BONUS_O = $(BONUS_FUNC:.c=.o)
 LIB = libft/libft.a
 
+MHDR = push_swap.h
+LHDR = libft/libft.h
+BHDR = bonus/push_swap_bonus.h get_next_line/get_next_line_bonus.h $(MHDR)
+
+MAKE = Makefile
+
 CC = cc
-CFLAGS = -g
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
@@ -41,7 +47,7 @@ all: $(LIB) $(NAME)
 
 bonus: $(LIB) $(NAME_BONUS)
 
-$(LIB):
+$(LIB): $(LHDR) $(MAKE)
 	make -C ./libft/
 
 libre:
@@ -50,6 +56,9 @@ libre:
 
 $(NAME): $(SRC_O)
 	$(CC) $(CFLAGS) $(SRC_O) $(LIB) -o $(NAME)
+
+$(SRC_O): $(MHDR) $(MAKE)
+$(BONUS_O): $(BHDR) $(MAKE)
 
 $(NAME_BONUS): $(BONUS_O)
 	$(CC) $(CFLAGS) $(BONUS_O) $(LIB) -o $(NAME_BONUS)
@@ -63,3 +72,5 @@ fclean: clean
 	make -C ./libft/ fclean
 
 re: fclean all
+
+.PHONY:	all clean fclean libre bonus

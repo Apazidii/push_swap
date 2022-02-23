@@ -23,6 +23,6 @@ void	ft_pb(t_base *base, int print)
 	base->size_a--;
 	if (base->size_a == 0)
 		base->a = NULL;
-    if (print)
-        write(1, "pb\n", 3);
+	if (print)
+		write(1, "pb\n", 3);
 }

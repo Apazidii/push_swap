@@ -17,6 +17,6 @@ void	ft_rb(t_base *base, int print)
 	if (base->size_b <= 1)
 		return ;
 	base->b = base->b->next;
-    if (print)
-        write(1, "rb\n", 3);
+	if (print)
+		write(1, "rb\n", 3);
 }
