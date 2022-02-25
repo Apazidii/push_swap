@@ -12,8 +12,19 @@
 
 #include "../push_swap.h"
 
+static int	is_sort(t_base *base)
+{
+	if (base->a->position < base->a->next->position && \
+		base->a->next->position < base->a->next->next->position && \
+		base->a->next->next->position < base->a->next->next->next->position)
+		return (1);
+	return (0);
+}
+
 void	sort_four(t_base *base)
 {
+	if (is_sort(base))
+		return ;
 	if (base->a->next->position == 0)
 		ft_sa(base, 1);
 	else if (base->a->next->next->position == 0)
