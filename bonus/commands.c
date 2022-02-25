@@ -56,7 +56,9 @@ static int	is_sort(t_base *base)
 		stack = stack->next;
 		i++;
 	}
-	return (1);
+    if (base->size_b == 0)
+        return (1);
+	return (0);
 }
 
 void	get_command(t_base *base)

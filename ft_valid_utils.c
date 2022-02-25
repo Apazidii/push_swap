@@ -27,6 +27,8 @@ int	is_only_numbers(char *s)
 {
 	if (*s == '+' || *s == '-')
 		s++;
+	if (*s == '\0')
+		return (0);
 	while (*s != '\0')
 	{
 		if (!(*s >= '0' && *s <= '9'))
