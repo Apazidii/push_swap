@@ -57,8 +57,8 @@ libre:
 $(NAME): $(SRC_O)
 	$(CC) $(CFLAGS) $(SRC_O) $(LIB) -o $(NAME)
 
-#$(SRC_O): $(MHDR) $(MAKE)
-#$(BONUS_O): $(BHDR) $(MAKE)
+$(SRC_O): $(MHDR) $(MAKE)
+$(BONUS_O): $(BHDR) $(MAKE)
 
 $(NAME_BONUS): $(BONUS_O)
 	$(CC) $(CFLAGS) $(BONUS_O) $(LIB) -o $(NAME_BONUS)
